@@ -35,7 +35,7 @@ function ContractBtns({ setValue }) {
     }
     const newAmmount = parseInt(uintInput);
     const newAuthor = stringInput
-    await contract.methods.createDonation(newAuthor, newAmmount).send({ from: accounts[0] });
+    await contract.methods.createDonation(newAuthor, newAmmount).send({ value: "0x"+(newAmmount*10**18).toString(16), from: accounts[0] });
   };
 
   return (

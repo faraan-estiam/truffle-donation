@@ -21,10 +21,9 @@ contract Donations {
     );
 
     constructor() {
-        createDonation("Faraan", 1);
     }
 
-    function createDonation(string memory _donator,  uint _amount) public {
+    function createDonation(string memory _donator,  uint _amount) public payable{
         uint _id = donationCount;
         uint256 _timestamp = block.timestamp;
         donationList[_id] = Donation(_id, _donator, _amount, _timestamp);
